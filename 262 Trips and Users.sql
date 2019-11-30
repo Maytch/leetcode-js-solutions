@@ -1,9 +1,9 @@
 # Write your MySQL query statement below
 SELECT 
 	Request_at as `Day`,
-    ROUND((
+	ROUND((
 		SUM(CASE WHEN Status="cancelled_by_client" THEN 1 ELSE 0 END) + 
-        SUM(CASE WHEN Status="cancelled_by_driver" THEN 1 ELSE 0 END)
+		SUM(CASE WHEN Status="cancelled_by_driver" THEN 1 ELSE 0 END)
 	) / COUNT(*), 2) as `Cancellation Rate`
 FROM
 	Trips t
